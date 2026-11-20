@@ -50,7 +50,9 @@ Releases in this repository are immutable (Settings > General > Releases > Enabl
    gh release verify-asset helper-v1.1 path/to/Pouf-Helper-1.1.dmg --repo kaancakr/pouf-app
    ```
 
-3. In `download/index.html` and `tr/download/index.html`, update the download link, the version, the size, the SHA-256 (`shasum -a 256 Pouf-Helper-1.1.dmg`), and the file name in the first install step and in the commands under "Checking the download". If the signing team ever changes, update the Team ID there too.
+3. In `download/index.html` and `tr/download/index.html`, update the download link, the version, the size, and the file name in the first install step and in the command under "Checking the download". If the signing team ever changes, update the Team ID in the card and in that section too.
+
+The pages don't show a SHA-256: it would sit beside the file it describes, so anyone able to swap the file could change it too. The signature check and the release attestation are the checks that hold.
 
 ## Security
 

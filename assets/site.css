@@ -996,10 +996,8 @@ code {
   font-size: 15px;
 }
 
-.checksum {
+.signature {
   grid-column: 1 / -1;
-  display: grid;
-  gap: var(--s3);
   margin: 0;
   padding-top: var(--s4);
   border-top: 1px solid var(--separator);
@@ -1007,12 +1005,12 @@ code {
   font-size: 13px;
 }
 
-.checksum dd {
+.signature dd {
   margin: var(--s1) 0 0;
   color: var(--text);
 }
 
-.checksum code {
+.signature code {
   overflow-wrap: anywhere;
 }
 

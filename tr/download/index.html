@@ -53,14 +53,10 @@
             <svg class="icon icon-sm" aria-hidden="true"><use href="../../assets/icons.svg#download"></use></svg>
             İndir
           </a>
-          <dl class="checksum">
+          <dl class="signature">
             <div>
               <dt>İmzalayan</dt>
               <dd>Developer ID · Team ID <code>K768X7CB7V</code> · <a href="#verify">Nasıl doğrulanır</a></dd>
-            </div>
-            <div>
-              <dt>SHA-256</dt>
-              <dd><code>a76292d33d46b39e76e6183da0e0ccb12c8bfd730d2f64b9f66516274f20d558</code></dd>
             </div>
           </dl>
         </div>
@@ -112,7 +108,6 @@
           <p>Pouf Helper, Team ID'si <strong>K768X7CB7V</strong> olan bir Apple Developer ID ile imzalanmıştır. İndirdiğin kopyayı açmadan önce denetlemek için Terminal'de şunu çalıştır:</p>
           <pre><code>spctl -a -vv -t open --context context:primary-signature ~/Downloads/Pouf-Helper-1.0.dmg</code></pre>
           <p>Yanıtta <strong>accepted</strong> ve <strong>Notarized Developer ID</strong> yazmalı, son satır da <strong>(K768X7CB7V)</strong> ile bitmeli. Başka bir Team ID ya da farklı bir sonuç görürsen dosyayı açma ve <a href="../support/">bize haber ver</a>.</p>
-          <p>Yukarıdaki SHA-256 özetini karşılaştırmak için <code>shasum -a 256 ~/Downloads/Pouf-Helper-1.0.dmg</code> komutunu çalıştır.</p>
 
           <h3>Güncelleme</h3>
           <p>Pouf Helper'ı menüsünden kapat, yeni sürümü indir ve eskisinin yerine geçecek şekilde yine Uygulamalar'a sürükle.</p>

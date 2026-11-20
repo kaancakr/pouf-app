@@ -45,12 +45,19 @@ Releases in this repository are immutable (Settings > General > Releases > Enabl
 2. Create the release as a draft with the DMG attached, check it on GitHub, then publish it:
 
    ```sh
-   gh release create helper-v1.1 path/to/Pouf-Helper-1.1.dmg --repo kaancakr/pouf-app --title "Pouf Helper 1.1" --draft
-   gh release edit helper-v1.1 --repo kaancakr/pouf-app --draft=false
-   gh release verify-asset helper-v1.1 path/to/Pouf-Helper-1.1.dmg --repo kaancakr/pouf-app
+   gh release create helper-v1.2.0 path/to/Pouf-Helper-1.2.0.dmg --repo kaancakr/pouf-app --title "Pouf Helper 1.2.0" --draft
+   gh release edit helper-v1.2.0 --repo kaancakr/pouf-app --draft=false
+   gh release verify-asset helper-v1.2.0 path/to/Pouf-Helper-1.2.0.dmg --repo kaancakr/pouf-app
    ```
 
 3. Copy the script's `dist/appcast-<version>.xml` over `appcast.xml` here, unchanged. This is the Sparkle feed installed helpers (1.1.0 and later) check, so it goes in only after the release in step 2 is published, never before.
+
+   Before merging, check that the enclosure URL downloads the very file that was signed. The tag must match `helper-v<version>` exactly:
+
+   ```sh
+   curl -sfL -o /tmp/pouf-check.dmg "$(xmllint --xpath 'string(//enclosure/@url)' appcast.xml)"
+   cmp /tmp/pouf-check.dmg path/to/Pouf-Helper-<version>.dmg
+   ```
 
    **Never edit `appcast.xml` by hand.** It is signed, and the helpers reject a feed whose signature doesn't match, which would stop updates for everyone. To change it, make a new release with the script.
 4. In `download/index.html` and `tr/download/index.html`, update the download link, the version, the size, and the file name in the first install step and in the command under "Checking the download". If the signing team ever changes, update the Team ID in the card and in that section too.

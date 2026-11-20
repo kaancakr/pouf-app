@@ -7,28 +7,28 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <language>en</language>
         <item>
             <title>Pouf Helper 1.1.0</title>
-            <pubDate>Fri, 20 Nov 2026 16:12:39 +0000</pubDate>
+            <pubDate>Fri, 20 Nov 2026 17:04:50 +0000</pubDate>
             <sparkle:version>3</sparkle:version>
             <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <description xml:lang="en"><![CDATA[
 <ul>
-<li>Pouf Helper can now check for updates and install them for you. It asks first, and you can turn automatic checks on or off in the menu.</li>
-<li>Check for Updates… in the menu looks for a new version right away.</li>
-<li>About Pouf Helper shows the version you have.</li>
+<li>Pouf Helper can now check for updates and install them for you. It asks first, and you can turn automatic checks on or off in Settings.</li>
+<li>Settings… in the menu opens a Settings window with Launch at Login, the Keep Mac Awake times and updates, so the menu is shorter.</li>
+<li>Check for Updates… in Settings looks for a new version right away, and Settings shows the version you have.</li>
 </ul>
 ]]></description>
             <description xml:lang="tr"><![CDATA[
 <ul>
-<li>Pouf Helper artık güncellemeleri denetleyip senin için kurabiliyor. Önce sana sorar; otomatik denetlemeyi menüden açıp kapatabilirsin.</li>
-<li>Menüdeki Güncellemeleri Denetle… yeni bir sürümü hemen arar.</li>
-<li>Pouf Helper Hakkında, kullandığın sürümü gösterir.</li>
+<li>Pouf Helper artık güncellemeleri denetleyip senin için kurabiliyor. Önce sana sorar; otomatik denetlemeyi Ayarlar'dan açıp kapatabilirsin.</li>
+<li>Menüdeki Ayarlar…, Oturum açınca başlat, Mac'i uyanık tutma süreleri ve güncellemelerin olduğu bir Ayarlar penceresi açar; menü de kısalır.</li>
+<li>Ayarlar'daki Güncellemeleri Denetle… yeni bir sürümü hemen arar; kullandığın sürüm de Ayarlar'da görünür.</li>
 </ul>
 ]]></description>
-            <enclosure url="https://github.com/kaancakr/pouf-app/releases/download/helper-v1.1.0/Pouf-Helper-1.1.0.dmg" length="2164620" type="application/octet-stream" sparkle:edSignature="wQq1BzyaKIo75dWC3yJZEs7mBkZwKUBMpLwEQRSiZVWrhgh3njAT/rip/CmxpCjkiDnEBLU+yKgL2hx5LNaaCg=="></enclosure>
+            <enclosure url="https://github.com/kaancakr/pouf-app/releases/download/helper-v1.1.0/Pouf-Helper-1.1.0.dmg" length="2165773" type="application/octet-stream" sparkle:edSignature="fgetCVz5Nf/RUd84GaIQXQzDrd42JzVcnAXP7M5WE4LDw1+n7JtnfItrbITcDvkSsDS3bYqUi810+cGqvOPZDw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: JAG7d2SoUumQ31u3JuProMNHbxbbo0OYSadteRs3fw+86CzwtoydM6Rbxi7lWBmkzT3+Ys0KVZSO2gVLEcH2AA==
-length: 1914
+edSignature: Er4Nn8y0joiJkWumulimV6+Vcv3NI9un9F7rlEju20Pk9Ieoe5asunWp9TwfqGMXHPBWxhoBRn5UzFheyXjEAA==
+length: 2191
 -->

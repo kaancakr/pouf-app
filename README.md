@@ -39,14 +39,23 @@ It fails if a link or image points to a missing file or icon, if a page has no t
 
 ## Release a new helper version
 
+Releases in this repository are immutable (Settings > General > Releases > Enable release immutability): once a release is published, its DMG can't be replaced or deleted and its tag can't be moved, and GitHub attaches a signed attestation to it. A wrong upload therefore needs a new version number, not a replaced file.
+
 1. Build the DMG in the app's repository with `Scripts/make-helper-dmg.sh` (see its README, "Releasing the helper").
-2. Create a release here with the DMG attached:
+2. Create the release as a draft with the DMG attached, check it on GitHub, then publish it:
 
    ```sh
-   gh release create helper-v1.1 path/to/Pouf-Helper-1.1.dmg --repo kaancakr/pouf-app --title "Pouf Helper 1.1"
+   gh release create helper-v1.1 path/to/Pouf-Helper-1.1.dmg --repo kaancakr/pouf-app --title "Pouf Helper 1.1" --draft
+   gh release edit helper-v1.1 --repo kaancakr/pouf-app --draft=false
+   gh release verify-asset helper-v1.1 path/to/Pouf-Helper-1.1.dmg --repo kaancakr/pouf-app
    ```
 
-3. In `download/index.html` and `tr/download/index.html`, update the download link, the version, the size and the SHA-256 (`shasum -a 256 Pouf-Helper-1.1.dmg`), and the file name in the first install step.
+3. In `download/index.html` and `tr/download/index.html`, update the download link, the version, the size, the SHA-256 (`shasum -a 256 Pouf-Helper-1.1.dmg`), and the file name in the first install step and in the commands under "Checking the download". If the signing team ever changes, update the Team ID there too.
+
+## Security
+
+- The DMG and the app inside it are signed with Developer ID (Team ID `K768X7CB7V`) and notarized. That signature, checked by Gatekeeper, is what protects users from a tampered download; the download page shows how to check it.
+- Every page sets a Content Security Policy in a `<meta>` tag (GitHub Pages can't send custom headers): no scripts, and styles and images only from this site. A page that needs anything else must widen that policy on purpose.
 
 ## Before the iPhone app ships
 

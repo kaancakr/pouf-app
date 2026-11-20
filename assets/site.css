@@ -998,16 +998,21 @@ code {
 
 .checksum {
   grid-column: 1 / -1;
+  display: grid;
+  gap: var(--s3);
+  margin: 0;
   padding-top: var(--s4);
   border-top: 1px solid var(--separator);
   color: var(--text-2);
   font-size: 13px;
 }
 
-.checksum code {
-  display: block;
-  margin-top: var(--s1);
+.checksum dd {
+  margin: var(--s1) 0 0;
   color: var(--text);
+}
+
+.checksum code {
   overflow-wrap: anywhere;
 }
 
@@ -1074,6 +1079,27 @@ code {
 .prose a {
   color: var(--accent);
   text-underline-offset: 3px;
+}
+
+/* Commands wrap instead of scrolling, so the page never scrolls sideways on a phone. */
+.prose pre {
+  margin: var(--s3) 0 0;
+  padding: var(--s3) var(--s4);
+  border-radius: var(--r-control);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.prose pre + p {
+  margin-top: var(--s3);
+}
+
+.prose :not(pre) > code {
+  color: var(--text);
 }
 
 .updated {

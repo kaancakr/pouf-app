@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mac için Pouf Helper'ı indir</title>
   <meta name="description" content="iPhone'undaki Pouf'un Mac'ini kontrol etmesini sağlayan menü çubuğu uygulaması Pouf Helper'ı indir. macOS 15 veya üstü için, Apple noter onaylı.">
@@ -52,7 +53,16 @@
             <svg class="icon icon-sm" aria-hidden="true"><use href="../../assets/icons.svg#download"></use></svg>
             İndir
           </a>
-          <p class="checksum">SHA-256 <code>a76292d33d46b39e76e6183da0e0ccb12c8bfd730d2f64b9f66516274f20d558</code></p>
+          <dl class="checksum">
+            <div>
+              <dt>İmzalayan</dt>
+              <dd>Developer ID · Team ID <code>K768X7CB7V</code> · <a href="#verify">Nasıl doğrulanır</a></dd>
+            </div>
+            <div>
+              <dt>SHA-256</dt>
+              <dd><code>a76292d33d46b39e76e6183da0e0ccb12c8bfd730d2f64b9f66516274f20d558</code></dd>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -97,6 +107,12 @@
         <div class="prose section-body">
           <h3>Neden Mac App Store'da değil?</h3>
           <p>Yardımcı Erişilebilirlik iznine ihtiyaç duyar ve App Sandbox dışında çalışır; bu yüzden bu siteden indirilir. Apple Developer ID ile imzalanmıştır ve Apple'ın noter onayından geçmiştir: Apple, sen açmadan önce onu kötü amaçlı yazılıma karşı denetlemiştir.</p>
+
+          <h3 id="verify">İndirdiğin dosyayı doğrula</h3>
+          <p>Pouf Helper, Team ID'si <strong>K768X7CB7V</strong> olan bir Apple Developer ID ile imzalanmıştır. İndirdiğin kopyayı açmadan önce denetlemek için Terminal'de şunu çalıştır:</p>
+          <pre><code>spctl -a -vv -t open --context context:primary-signature ~/Downloads/Pouf-Helper-1.0.dmg</code></pre>
+          <p>Yanıtta <strong>accepted</strong> ve <strong>Notarized Developer ID</strong> yazmalı, son satır da <strong>(K768X7CB7V)</strong> ile bitmeli. Başka bir Team ID ya da farklı bir sonuç görürsen dosyayı açma ve <a href="../support/">bize haber ver</a>.</p>
+          <p>Yukarıdaki SHA-256 özetini karşılaştırmak için <code>shasum -a 256 ~/Downloads/Pouf-Helper-1.0.dmg</code> komutunu çalıştır.</p>
 
           <h3>Güncelleme</h3>
           <p>Pouf Helper'ı menüsünden kapat, yeni sürümü indir ve eskisinin yerine geçecek şekilde yine Uygulamalar'a sürükle.</p>

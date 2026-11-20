@@ -1,0 +1,1243 @@
+/* Pouf site. Tokens match the iPhone app (PoufTheme): always dark, apricot accent, rounded type.
+   Spacing comes only from the scale below; page sections use the larger steps. */
+
+:root {
+  color-scheme: dark;
+
+  --bg: #101015;
+  --surface: #1b1b22;
+  --raised: #26262f;
+  --separator: #2e2e38;
+  --text: #f5f1ea;
+  --text-2: #9c98a6;
+  --accent: #ffa552;
+  --accent-hover: #ffb46e;
+  --accent-tint: #3a2614;
+  --on-accent: #2a1605;
+
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+  --s9: 96px;
+
+  --margin: var(--s4);
+  --section: var(--s7);
+  --content: 1080px;
+  --prose: 680px;
+
+  --r-card: 22px;
+  --r-control: 14px;
+
+  --font: ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --margin: var(--s5);
+    --section: var(--s8);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --margin: var(--s6);
+    --section: var(--s9);
+  }
+}
+
+/* Base */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.5 var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img,
+svg {
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.9em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+
+.icon-sm {
+  width: 20px;
+  height: 20px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--margin);
+  top: calc(-1 * var(--s8));
+  z-index: 1;
+  padding: var(--s3) var(--s4);
+  border-radius: var(--r-control);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--s2);
+}
+
+/* Layout */
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--content) + 2 * var(--margin));
+  margin-inline: auto;
+  padding-inline: var(--margin);
+}
+
+.wrap-prose {
+  max-width: calc(var(--prose) + 2 * var(--margin));
+}
+
+.section {
+  padding-block: var(--section) 0;
+}
+
+/* Header */
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  min-height: 64px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  min-height: 44px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+/* The site's copy of the mark is cropped to its drawing, so its left edge sits exactly on the page margin. */
+.brand img {
+  width: 32px;
+  height: auto;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: var(--s3);
+  border-radius: var(--r-control);
+  color: var(--text-2);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+.site-nav a:hover {
+  background: var(--surface);
+}
+
+.site-nav .lang {
+  margin-left: var(--s1);
+  border: 1px solid var(--separator);
+  color: var(--text);
+}
+
+.nav-wide {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .nav-wide {
+    display: list-item;
+  }
+}
+
+/* Buttons */
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  min-height: 52px;
+  padding-inline: var(--s5);
+  border-radius: var(--r-control);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.button-primary:hover {
+  background: var(--accent-hover);
+}
+
+.button-primary:active {
+  transform: scale(0.98);
+}
+
+.button-muted {
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: default;
+}
+
+/* Text blocks */
+
+.eyebrow {
+  margin-bottom: var(--s3);
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.title-1 {
+  font-size: clamp(40px, calc(20px + 4vw), 64px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.title-2 {
+  font-size: clamp(28px, calc(18px + 2vw), 40px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.title-3 {
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  color: var(--text-2);
+  font-size: 18px;
+}
+
+@media (min-width: 640px) {
+  .lead {
+    font-size: 20px;
+  }
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: var(--s6);
+}
+
+.section-head .lead {
+  margin-top: var(--s3);
+}
+
+.note {
+  margin-top: var(--s4);
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+/* Hero */
+
+.hero {
+  display: grid;
+  gap: var(--s7);
+  padding-top: var(--s6);
+}
+
+.hero-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--s5);
+}
+
+.hero .title-1 {
+  margin-bottom: var(--s4);
+}
+
+.hero .lead {
+  max-width: 560px;
+  margin-bottom: var(--s6);
+}
+
+.app-icon {
+  border-radius: 22.37%;
+  box-shadow: 0 0 0 1px var(--separator);
+}
+
+.hero-art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* A soft apricot light behind the phone. */
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 8% 0;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgb(255 165 82 / 0.16), transparent);
+}
+
+@media (min-width: 880px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--s8);
+    padding-top: var(--s8);
+  }
+}
+
+/* Phone. The screen is laid out at the iPhone 17's 402 × 874 pt, 1 px per pt, and scaled to fit the frame, so its
+   numbers match the app's own layout. */
+
+.phone {
+  --pw: 264;
+  --bezel: 8;
+  --inner: calc(var(--pw) - 2 * var(--bezel));
+  position: relative;
+  width: calc(var(--pw) * 1px);
+  padding: calc(var(--bezel) * 1px);
+  border-radius: calc(var(--pw) * 0.165px);
+  background: linear-gradient(150deg, #3c3c46 0%, #1e1e25 35%, #16161b 65%, #34343d 100%);
+  box-shadow:
+    inset 0 0 0 1px #4a4a55,
+    inset 0 0 0 3px #101015,
+    0 40px 80px rgb(0 0 0 / 0.45);
+}
+
+@media (min-width: 640px) {
+  .phone {
+    --pw: 300;
+    --bezel: 9;
+  }
+}
+
+.phone-screen {
+  width: calc(var(--inner) * 1px);
+  height: calc(var(--inner) * 874 / 402 * 1px);
+  overflow: hidden;
+  border-radius: calc((var(--pw) * 0.165 - var(--bezel)) * 1px);
+  background: var(--bg);
+}
+
+.screen {
+  position: relative;
+  width: 402px;
+  height: 874px;
+  transform: scale(calc(var(--inner) / 402));
+  transform-origin: top left;
+  color: var(--text);
+  font-family: var(--font);
+}
+
+.screen > * {
+  position: absolute;
+}
+
+.screen svg {
+  width: 100%;
+  height: 100%;
+}
+
+.status-time {
+  top: 17px;
+  left: 50px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.island {
+  top: 11px;
+  left: 138px;
+  width: 126px;
+  height: 37px;
+  border-radius: 18.5px;
+  background: #000;
+}
+
+.status-icons {
+  top: 21px;
+  right: 34px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.status-icons .cell,
+.status-icons .wifi {
+  width: 18px;
+  height: 12px;
+}
+
+.status-icons .battery {
+  width: 27px;
+  height: 13px;
+}
+
+.pill {
+  top: 70px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 18px;
+  background: var(--surface);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+.settings {
+  top: 70px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.settings svg {
+  width: 18px;
+  height: 18px;
+}
+
+.touchpad {
+  top: 122px;
+  left: 16px;
+  width: 370px;
+  height: 534px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--surface);
+}
+
+.click-bar {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 48px;
+  border-top: 1px solid var(--separator);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.click-bar span {
+  display: grid;
+  place-items: center;
+}
+
+.click-bar span + span {
+  border-left: 1px solid var(--separator);
+}
+
+/* The finger highlight and click ripple the touchpad draws, here on a loop. */
+.finger {
+  position: absolute;
+  top: 200px;
+  left: 196px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgb(255 165 82 / 0.16);
+}
+
+.finger::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ripple 3s ease-out 1s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.6);
+  }
+  14% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+.keys {
+  top: 668px;
+  left: 16px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  width: 370px;
+  height: 44px;
+}
+
+.keys span {
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--surface);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.keys svg {
+  width: 20px;
+  height: 20px;
+}
+
+.keys .left svg {
+  transform: rotate(180deg);
+}
+
+.keys .up svg {
+  transform: rotate(-90deg);
+}
+
+.keys .down svg {
+  transform: rotate(90deg);
+}
+
+.type-row {
+  top: 724px;
+  left: 16px;
+  display: grid;
+  grid-template-columns: 1fr 52px;
+  gap: 8px;
+  width: 370px;
+  height: 52px;
+}
+
+.type-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.type-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.media-button {
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--accent);
+}
+
+.media-button svg {
+  width: 26px;
+  height: 26px;
+}
+
+.tab-bar {
+  top: 794px;
+  left: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 275px;
+  height: 60px;
+  padding: 3px;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 30px;
+  background: #2a2a31;
+  font-size: 10.5px;
+  font-weight: 600;
+  --play-cut: #2a2a31;
+}
+
+.tab-bar span {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 2px;
+  border-radius: 27px;
+}
+
+.tab-bar svg {
+  width: 26px;
+  height: 26px;
+}
+
+.tab-bar .current {
+  background: #18181e;
+  color: var(--accent);
+}
+
+/* Notes floating beside the phone. Their outer edges sit on the column's start and on the page margin. */
+.float-card {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  gap: var(--s3);
+  padding: var(--s3) var(--s4) var(--s3) var(--s3);
+  border-radius: var(--r-card);
+  background: rgb(27 27 34 / 0.94);
+  box-shadow:
+    0 0 0 1px var(--separator),
+    0 24px 48px rgb(0 0 0 / 0.4);
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-card .tile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.float-card .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.float-title {
+  display: block;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.float-detail {
+  display: block;
+  white-space: nowrap;
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.float-group {
+  top: 22%;
+  left: 0;
+}
+
+.float-secure {
+  top: 62%;
+  right: 0;
+  animation-delay: -3s;
+}
+
+/* Only beside the two-column hero, where both cards overlap the phone. */
+@media (min-width: 880px) {
+  .float-card {
+    display: flex;
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finger::after,
+  .float-card {
+    animation: none;
+  }
+}
+
+/* Cards */
+
+.card {
+  padding: var(--s5);
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+
+.card .title-3 {
+  margin-block: var(--s4) var(--s2);
+}
+
+/* :where keeps these at class strength, so the card variants below (download, contact) can restyle their text. */
+.card :where(p) {
+  color: var(--text-2);
+  font-size: 16px;
+}
+
+.card :where(p + p) {
+  margin-top: var(--s2);
+}
+
+.card a:not(.button) {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card a:not(.button):hover {
+  text-decoration: underline;
+}
+
+.tile {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-control);
+  background: var(--accent-tint);
+  color: var(--accent);
+}
+
+.feature-grid {
+  display: grid;
+  gap: var(--s4);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 959px) {
+  .feature-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 960px) {
+  .feature-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .feature-grid > * {
+    grid-column: span 2;
+  }
+
+  .feature-grid > :nth-child(n + 4) {
+    grid-column: span 3;
+  }
+}
+
+/* Numbered steps */
+
+.step-grid {
+  display: grid;
+  gap: var(--s4);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+@media (min-width: 880px) {
+  .step-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-grid > li {
+  counter-increment: step;
+}
+
+.step-number::before {
+  content: counter(step);
+}
+
+.step-number {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.step-list {
+  display: grid;
+  gap: var(--s5);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.step-list > li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: var(--s4);
+  counter-increment: step;
+}
+
+.step-list .step-number {
+  grid-row: span 2;
+}
+
+.step-list .title-3 {
+  align-self: center;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.step-list p {
+  color: var(--text-2);
+}
+
+/* Requirements */
+
+.specs {
+  display: grid;
+  padding: 0;
+  list-style: none;
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+
+.specs > li {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  padding: var(--s5);
+}
+
+.specs > li + li {
+  border-top: 1px solid var(--separator);
+}
+
+@media (min-width: 880px) {
+  .specs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .specs > li + li {
+    border-top: 0;
+    border-left: 1px solid var(--separator);
+  }
+}
+
+.specs .label {
+  display: block;
+  font-weight: 600;
+}
+
+.specs .detail {
+  display: block;
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+/* Page head (inner pages) */
+
+.page-head {
+  padding-top: var(--s6);
+}
+
+@media (min-width: 640px) {
+  .page-head {
+    padding-top: var(--s8);
+  }
+}
+
+.page-head .title-1 {
+  margin-bottom: var(--s4);
+}
+
+/* Download card */
+
+.download-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: var(--s4);
+  margin-top: var(--s6);
+}
+
+.download-card .app-icon {
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 0 0 1px var(--separator);
+}
+
+.download-card .button {
+  grid-column: 1 / -1;
+}
+
+.download-name {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.download-meta {
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.checksum {
+  grid-column: 1 / -1;
+  padding-top: var(--s4);
+  border-top: 1px solid var(--separator);
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+.checksum code {
+  display: block;
+  margin-top: var(--s1);
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 640px) {
+  .download-card {
+    grid-template-columns: 64px 1fr auto;
+  }
+
+  .download-card .button {
+    grid-column: auto;
+  }
+}
+
+/* Prose (privacy, support, download notes) */
+
+.section-body {
+  margin-top: var(--s6);
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.page-head + .prose {
+  margin-top: var(--s7);
+}
+
+.prose h2 {
+  margin-top: var(--s7);
+  margin-bottom: var(--s3);
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.prose h3 {
+  margin-top: var(--s5);
+  margin-bottom: var(--s2);
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.prose p,
+.prose ul {
+  color: var(--text-2);
+}
+
+.prose p + p,
+.prose p + ul,
+.prose ul + p {
+  margin-top: var(--s3);
+}
+
+.prose ul {
+  display: grid;
+  gap: var(--s2);
+  padding-left: var(--s5);
+}
+
+.prose li::marker {
+  color: var(--accent);
+}
+
+.prose a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+.updated {
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.summary-card {
+  margin-top: var(--s6);
+}
+
+.summary-card .title-3 {
+  margin: 0;
+}
+
+.summary-card ul {
+  margin-top: var(--s3);
+  display: grid;
+  gap: var(--s2);
+  padding-left: var(--s5);
+  color: var(--text);
+}
+
+.summary-card li::marker {
+  color: var(--accent);
+}
+
+/* Support */
+
+.contact-card {
+  display: grid;
+  gap: var(--s4);
+  margin-top: var(--s6);
+}
+
+.contact-card .title-3 {
+  margin: 0;
+}
+
+.contact-card p {
+  margin-top: var(--s1);
+}
+
+@media (min-width: 640px) {
+  .contact-card {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+.faq {
+  display: grid;
+  gap: var(--s3);
+}
+
+.faq details {
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  min-height: 64px;
+  padding: var(--s4) var(--s5);
+  border-radius: var(--r-card);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary .icon {
+  color: var(--text-2);
+  transition: transform 0.2s ease;
+}
+
+.faq details[open] summary .icon {
+  transform: rotate(180deg);
+}
+
+.faq .answer {
+  padding: 0 var(--s5) var(--s5);
+}
+
+.faq .answer p,
+.faq .answer ul {
+  color: var(--text-2);
+}
+
+.faq .answer ul {
+  display: grid;
+  gap: var(--s2);
+  padding-left: var(--s5);
+}
+
+.faq .answer p + ul,
+.faq .answer ul + p,
+.faq .answer p + p {
+  margin-top: var(--s3);
+}
+
+.faq .answer li::marker {
+  color: var(--accent);
+}
+
+/* Footer */
+
+.site-footer {
+  margin-top: var(--section);
+  border-top: 1px solid var(--separator);
+}
+
+.site-footer .wrap {
+  display: grid;
+  gap: var(--s4);
+  padding-block: var(--s6) var(--s7);
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--s5);
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-2);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.legal {
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-primary:active {
+    transform: none;
+  }
+
+  .faq summary .icon {
+    transition: none;
+  }
+}

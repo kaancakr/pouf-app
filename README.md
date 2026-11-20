@@ -50,7 +50,11 @@ Releases in this repository are immutable (Settings > General > Releases > Enabl
    gh release verify-asset helper-v1.1 path/to/Pouf-Helper-1.1.dmg --repo kaancakr/pouf-app
    ```
 
-3. In `download/index.html` and `tr/download/index.html`, update the download link, the version, the size, and the file name in the first install step and in the command under "Checking the download". If the signing team ever changes, update the Team ID in the card and in that section too.
+3. Copy the script's `dist/appcast-<version>.xml` over `appcast.xml` here, unchanged. This is the Sparkle feed installed helpers (1.1.0 and later) check, so it goes in only after the release in step 2 is published, never before.
+
+   **Never edit `appcast.xml` by hand.** It is signed, and the helpers reject a feed whose signature doesn't match, which would stop updates for everyone. To change it, make a new release with the script.
+4. In `download/index.html` and `tr/download/index.html`, update the download link, the version, the size, and the file name in the first install step and in the command under "Checking the download". If the signing team ever changes, update the Team ID in the card and in that section too.
+5. Merge the appcast and the download pages together.
 
 The pages don't show a SHA-256: it would sit beside the file it describes, so anyone able to swap the file could change it too. The signature check and the release attestation are the checks that hold.
 

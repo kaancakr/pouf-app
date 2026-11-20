@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Pouf Helper</title>
+        <link>https://kaancakr.github.io/pouf-app/appcast.xml</link>
+        <language>en</language>
+        <item>
+            <title>Pouf Helper 1.1.0</title>
+            <pubDate>Fri, 20 Nov 2026 16:12:39 +0000</pubDate>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <description xml:lang="en"><![CDATA[
+<ul>
+<li>Pouf Helper can now check for updates and install them for you. It asks first, and you can turn automatic checks on or off in the menu.</li>
+<li>Check for Updates… in the menu looks for a new version right away.</li>
+<li>About Pouf Helper shows the version you have.</li>
+</ul>
+]]></description>
+            <description xml:lang="tr"><![CDATA[
+<ul>
+<li>Pouf Helper artık güncellemeleri denetleyip senin için kurabiliyor. Önce sana sorar; otomatik denetlemeyi menüden açıp kapatabilirsin.</li>
+<li>Menüdeki Güncellemeleri Denetle… yeni bir sürümü hemen arar.</li>
+<li>Pouf Helper Hakkında, kullandığın sürümü gösterir.</li>
+</ul>
+]]></description>
+            <enclosure url="https://github.com/kaancakr/pouf-app/releases/download/helper-v1.1.0/Pouf-Helper-1.1.0.dmg" length="2164620" type="application/octet-stream" sparkle:edSignature="wQq1BzyaKIo75dWC3yJZEs7mBkZwKUBMpLwEQRSiZVWrhgh3njAT/rip/CmxpCjkiDnEBLU+yKgL2hx5LNaaCg=="></enclosure>
+        </item>
+    </channel>
+</rss><!-- sparkle-signatures:
+edSignature: JAG7d2SoUumQ31u3JuProMNHbxbbo0OYSadteRs3fw+86CzwtoydM6Rbxi7lWBmkzT3+Ys0KVZSO2gVLEcH2AA==
+length: 1914
+-->

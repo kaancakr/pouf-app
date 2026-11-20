@@ -59,7 +59,10 @@ The pages don't show a SHA-256: it would sit beside the file it describes, so an
 - The DMG and the app inside it are signed with Developer ID (Team ID `K768X7CB7V`) and notarized. That signature, checked by Gatekeeper, is what protects users from a tampered download; the download page shows how to check it.
 - Every page sets a Content Security Policy in a `<meta>` tag (GitHub Pages can't send custom headers): no scripts, and styles and images only from this site. A page that needs anything else must widen that policy on purpose.
 
+## Support email
+
+`pufmachelper@gmail.com`, on the privacy and support pages in both languages. The iPhone app shows the same address, so change both together.
+
 ## Before the iPhone app ships
 
-- The support address is the placeholder `support@example.com` on the privacy and support pages, in both languages.
 - The App Store button reads "coming soon" and the second setup step says the app is coming. Replace both with the App Store link once the app has one.
